@@ -176,7 +176,7 @@ def test_properties_logged():
     s.property_normal = 99
     assert 99 == s.normal_val
     del s.property_normal
-    assert None == s.normal_val
+    assert s.normal_val is None
 
     assert 8 == s.property_towrap
     with pytest.raises(SpyTestException, match="setter"):
